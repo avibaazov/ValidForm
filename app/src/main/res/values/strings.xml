@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ValidForm</string>
+    <string name="error_invalid_email">Please enter a valid email address.</string>
+    <string name="error_short_password">Password must be at least 6 characters long.</string>
+    <string name="error_invalid_name">Name must contain only letters and spaces.</string>
+    <string name="error_password_mismatch">Passwords do not match.</string>
+    <string name="error_invalid_phone">Please enter a valid phone number.</string>
+    <string name="error_invalid_postal_code">Please enter a valid postal code.</string>
+</resources>
