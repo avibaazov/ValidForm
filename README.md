@@ -46,7 +46,7 @@ ValidForm provides pre-defined patterns for common validation needs:
 formValidator.addValidation(R.id.phoneEditText, ValidationPatterns.PHONE, R.string.error_invalid_phone);
 formValidator.addValidation(R.id.creditCardEditText, ValidationPatterns.CREDIT_CARD, R.string.error_invalid_credit_card);
 ```
-5. Handle Validation Results
+### 3. Handle Validation Results
 
 Handle validation results through a callback:
 
