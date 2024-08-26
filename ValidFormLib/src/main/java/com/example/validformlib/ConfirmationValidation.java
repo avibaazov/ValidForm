@@ -1,42 +1,40 @@
-package com.example.validform;
+package com.example.validformlib;
 
 import android.view.View;
 import android.widget.EditText;
 import com.google.android.material.textfield.TextInputLayout;
-import java.util.regex.Pattern;
 
-public class RegexValidation implements Validation {
-    private final View view;
-    private final Pattern pattern;
+public class ConfirmationValidation implements Validation {
+    private final View passwordView;
+    private final View confirmPasswordView;
     private final String errorMessage;
 
-    public RegexValidation(View view, Pattern pattern, String errorMessage) {
-        this.view = view;
-        this.pattern = pattern;
+    public ConfirmationValidation(View passwordView, View confirmPasswordView, String errorMessage) {
+        this.passwordView = passwordView;
+        this.confirmPasswordView = confirmPasswordView;
         this.errorMessage = errorMessage;
     }
 
     @Override
     public boolean isValid() {
-        String input = getText();
-        return pattern.matcher(input).matches();
+        String password = getText(passwordView);
+        String confirmPassword = getText(confirmPasswordView);
+        return password.equals(confirmPassword);
     }
 
     @Override
     public void showError() {
         if (!isValid()) {
-            setError(errorMessage);
+            setError(confirmPasswordView, errorMessage);
         }
     }
 
     @Override
     public void clearError() {
-        setError(null);
+        setError(confirmPasswordView, null);
     }
 
-
-
-    private String getText() {
+    private String getText(View view) {
         if (view instanceof EditText) {
             return ((EditText) view).getText().toString().trim();
         } else if (view instanceof TextInputLayout) {
@@ -45,7 +43,7 @@ public class RegexValidation implements Validation {
         return "";
     }
 
-    private void setError(String error) {
+    private void setError(View view, String error) {
         if (view instanceof EditText) {
             ((EditText) view).setError(error);
         } else if (view instanceof TextInputLayout) {

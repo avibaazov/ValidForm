@@ -1,13 +1,14 @@
 package com.example.validform;
 
 import android.os.Bundle;
-import android.util.Patterns;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.validformlib.FormValidator;
+import com.example.validformlib.ValidationPatterns;
 
 public class MainActivity extends AppCompatActivity {
 

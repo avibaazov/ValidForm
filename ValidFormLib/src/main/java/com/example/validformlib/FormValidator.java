@@ -1,8 +1,8 @@
-package com.example.validform;
+package com.example.validformlib;
 
 import android.app.Activity;
 import android.view.View;
-import com.google.android.material.textfield.TextInputLayout;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
